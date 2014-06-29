@@ -3,12 +3,7 @@
 %h3
   = @post.body
 
-%h4 COMMENTS
-
-%ul
-- @post.comments.each do |comment|
-  %li
-  = comment.body
+= render :partial => 'comments', :locals => { :comments => @post.comments }
 
 = simple_form_for [@post, @post.comments.build] do |comment|
   = comment.input :body, :as => :text

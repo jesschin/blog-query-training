@@ -1,0 +1,5 @@
+%div.comments-div
+  %ul#comment-list
+    - comments.each do |comment|
+      %li
+        = comment.body
