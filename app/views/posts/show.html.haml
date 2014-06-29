@@ -9,3 +9,7 @@
 - @post.comments.each do |comment|
   %li
   = comment.body
+
+= simple_form_for [@post, @post.comments.build] do |comment|
+  = comment.input :body
+  = comment.button :submit
