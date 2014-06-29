@@ -11,5 +11,5 @@
   = comment.body
 
 = simple_form_for [@post, @post.comments.build] do |comment|
-  = comment.input :body
+  = comment.input :body, :as => :text
   = comment.button :submit
