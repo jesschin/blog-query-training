@@ -2,3 +2,10 @@
   = @post.title
 %h3
   = @post.body
+
+%h4 COMMENTS
+
+%ul
+- @post.comments.each do |comment|
+  %li
+  = comment.body
