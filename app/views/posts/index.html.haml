@@ -1,0 +1,15 @@
+%h3 POSTS
+
+%table
+  %thead
+    %tr
+      %th TITLE
+      %th BODY
+  %tbody
+    - @posts.each do |post|
+      %tr
+        %td
+          = post.title
+        %td
+          = post.body
+
