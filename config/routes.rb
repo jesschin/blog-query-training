@@ -1,7 +1,15 @@
 Rails.application.routes.draw do
-  resources :posts, :only => [:index, :show] do
-    resources :comments, :only => [:new, :create]
+  namespace :api, :defaults => { :format => :json },
+    :constraints => { :format => :json } do
+    resources :posts, :only => [:index, :show] do
+      get 'comments' => 'comments#index'
+    end
   end
+
+  resources :posts, :only => [:index, :show] do
+    resources :comments, :only => [:index, :new, :create]
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
