@@ -11,8 +11,10 @@ class CommentsController < ApplicationController
     @comment = Comment.new(permitted_params.comment)
     @comment.post = post
 
-    if @comment.save
-      redirect_to post_path(post)
+    respond_to do |format|
+      if @comment.save
+        format.js
+      end
     end
   end
 end
