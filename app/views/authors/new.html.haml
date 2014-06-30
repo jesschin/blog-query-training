@@ -1,0 +1,14 @@
+= simple_form_for @author do |author|
+  - if @author.errors.any?
+    %div
+      %h2 
+        = "#{pluralize(@author.errors.count, "error")} prohibited this author from being saved"
+      %ul
+        - @author.errors.full_messages.each do |msg|
+          %li
+            = msg
+  = author.input :name
+  = author.input :email
+  = author.input :continent, :collection => Continent.all
+  = author.input :country, :collection => Continent.all, :as => :grouped_select, :group_method =>:countries
+  = author.button :submit

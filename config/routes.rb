@@ -1,4 +1,15 @@
 Rails.application.routes.draw do
+  namespace :api do
+  get 'countries/index'
+  end
+
+  resources :authors
+
+  namespace :api do
+    resources :continents do
+      resources :countries, :shallow => true
+    end
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

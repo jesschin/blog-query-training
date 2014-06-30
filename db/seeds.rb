@@ -41,3 +41,29 @@ post_awkward_tag1 = Tag.create(:name => "#social", :post => post_awkward)
 post_awkward_tag2 = Tag.create(:name => "#1", :post => post_awkward)
 post_extrovert_tag1 = Tag.create(:name => "#social", :post => post_extrovert)
 post_extrovert_tag2 = Tag.create(:name => "#2", :post => post_extrovert)
+
+Asia = Continent.create(:name => "Asia")
+Africa = Continent.create(:name => "Africa")
+Europe = Continent.create(:name => "Europe")
+North_America = Continent.create(:name => "North America")
+
+Country.create(:name => "Philippines", :continent => Asia)
+Country.create(:name => "China", :continent => Asia)
+Country.create(:name => "North Korea", :continent => Asia)
+Country.create(:name => "Singapore", :continent => Asia)
+
+Country.create(:name => "Egypt", :continent => Africa)
+Country.create(:name => "Congo", :continent => Africa)
+Country.create(:name => "Botswana", :continent => Africa)
+Country.create(:name => "Algeria", :continent => Africa)
+
+Country.create(:name => "France", :continent => Europe)
+Country.create(:name => "Spain", :continent => Europe)
+Country.create(:name => "UK", :continent => Europe)
+Country.create(:name => "Germany", :continent => Europe)
+
+Country.create(:name => "US", :continent => North_America)
+Country.create(:name => "Mexico", :continent => North_America)
+Country.create(:name => "Canada", :continent => North_America)
+Country.create(:name => "Greenland", :continent => North_America)
+
