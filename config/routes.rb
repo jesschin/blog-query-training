@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   namespace :api, :defaults => { :format => :json },
     :constraints => { :format => :json } do
     resources :posts, :only => [:index, :show] do
@@ -9,6 +10,8 @@ Rails.application.routes.draw do
   resources :posts, :only => [:index, :show] do
     resources :comments, :only => [:index, :new, :create]
   end
+
+  root 'posts#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
