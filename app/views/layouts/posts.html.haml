@@ -1,13 +1,9 @@
-!!!5
-%html
-%head
-  %title BlogV2
-  = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
-  = javascript_include_tag 'application', 'data-turbolinks-track' => true
-  = stylesheet_link_tag 'posts'
-  = csrf_meta_tags
-%body
-  .container-fluid
-    .row-fluid
-      .span12
-        = yield
+= stylesheet_link_tag 'posts'
+= duplicate
+- if asset_exists?("#{controller_name}/#{action_name}")
+  = stylesheet_link_tag "#{controller_name}/#{action_name}"
+
+= content_for :title do
+  POSTS
+
+= render :template => 'layouts/application'
