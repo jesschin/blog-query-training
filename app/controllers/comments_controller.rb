@@ -4,12 +4,13 @@ class CommentsController < ApplicationController
   end
 
   def new
+    head :created
   end
 
   def create
-    post = Post.find(params[:post_id])
+    @post = Post.find(params[:post_id])
     @comment = Comment.new(permitted_params.comment)
-    @comment.post = post
+    @comment.post = @post
 
     respond_to do |format|
       if @comment.save

@@ -1,1 +1,1 @@
-$('#comment-list').append("<li>#{j @comment.body}</li>");
+$('.comments-div').append("#{j render 'posts/comments', :comments => @post.comments }");
