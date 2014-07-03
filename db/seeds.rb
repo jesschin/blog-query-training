@@ -41,3 +41,18 @@ post_awkward_tag1 = Tag.create(:name => "#social", :post => post_awkward)
 post_awkward_tag2 = Tag.create(:name => "#1", :post => post_awkward)
 post_extrovert_tag1 = Tag.create(:name => "#social", :post => post_extrovert)
 post_extrovert_tag2 = Tag.create(:name => "#2", :post => post_extrovert)
+
+# User.create(:email => "admin@test.com", :password => "password")
+User.create(:email => "admin@test.com", :password => "password", :role => :admin)
+User.create(:email => "user@test.com", :password => "password", :role => :user)
+
+
+
+
+
+
+
+
+
+
+

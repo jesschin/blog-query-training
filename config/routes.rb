@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, :skip => [:registrations] 
+
   namespace :api, :defaults => { :format => :json },
     :constraints => { :format => :json } do
     resources :posts, :only => [:index, :show] do

@@ -5,6 +5,7 @@
 
 = render :partial => 'comments', :locals => { :comments => @post.comments }
 
-= simple_form_for [@post, @post.comments.build], :remote => true do |comment|
-  = comment.input :body, :as => :text
-  = comment.button :submit
+- if can? :gibberish, Post
+  = simple_form_for [@post, @post.comments.build], :remote => true do |comment|
+    = comment.input :body, :as => :text
+    = comment.button :submit

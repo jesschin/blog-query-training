@@ -32,7 +32,7 @@ gem 'spring',        group: :development
 
 gem 'devise'
 gem 'simple_roles'
-gem 'cancancan'
+gem 'cancancan', '~> 1.8'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
