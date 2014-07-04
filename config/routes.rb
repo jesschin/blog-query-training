@@ -8,9 +8,11 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :posts, :only => [:index, :show] do
+  resources :posts do
     resources :comments, :only => [:index, :new, :create]
   end
+
+  resources :logs, :only => :index
 
   root 'posts#index'
 

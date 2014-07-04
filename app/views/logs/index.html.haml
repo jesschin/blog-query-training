@@ -1,0 +1,35 @@
+%h3 Logs
+
+%table
+  %thead
+    %tr
+      %th Item Type
+      %th Item Id
+      %th Event
+      %th User
+      %th Updated At
+      %th Old Value
+      %th New Value
+  %tbody
+    - @logs.each do |log|
+      %tr
+        %td
+          = log.item_type
+        %td
+          = log.item_id
+        %td
+          = log.event
+        %td
+          - if log.whodunnit
+            = User.find(log.whodunnit).email
+        %td
+          = log.created_at.strftime("%Y-%m-%d %H:%M")
+        %td
+          - log.changeset.each do |k, v|
+            = "#{k}: #{v[0]}\n"
+        %td
+          - log.changeset.each do |k, v|
+            = "#{k}: #{v[1]}\n\n"
+
+
+

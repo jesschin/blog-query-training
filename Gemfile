@@ -34,6 +34,8 @@ gem 'devise'
 gem 'simple_roles'
 gem 'cancancan', '~> 1.8'
 
+gem 'paper_trail'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

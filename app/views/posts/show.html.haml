@@ -2,8 +2,10 @@
   = @post.title
 %h3
   = @post.body
+= link_to "Edit", edit_post_path(@post)
 
 = render :partial => 'comments', :locals => { :comments => @post.comments }
+
 
 - if can? :gibberish, Post
   = simple_form_for [@post, @post.comments.build], :remote => true do |comment|
