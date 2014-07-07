@@ -38,6 +38,7 @@ group :test do
   gem 'factory_girl_rails'
   gem 'shoulda-matchers', :require => false
   gem 'api_matchers'
+  gem 'capybara'
 end 
 
 
